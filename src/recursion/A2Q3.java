@@ -15,16 +15,16 @@ public class A2Q3 {
      */
     // Create a new Method
     public int pyramid(int n) {
-        int triangle[] = new int[n];
-        triangle[0] = 1;
-        triangle[1] = 2;
-        if (n > 1) {
-            triangle[n] = triangle[n - 1] + triangle[n - 2];
-            pyramid(n);
-        } else {
-            return (triangle[n]);
+        // Set the return values if n = 1 or 2
+        if (n == 1) {
+            return n;
+        } else if (n == 2) {
+            return n + (n - 1);
+        } // add the number to the previous number
+        else {
+            return n + pyramid(n - 1);
         }
-        return (triangle[n]);
+
     }
 
     public static void main(String[] args) {
