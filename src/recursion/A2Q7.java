@@ -15,15 +15,31 @@ public class A2Q7 {
      */
     // Create a method
     public boolean pal(String word) {
-        // Compare the first and last letter of the word
-        if (word.charAt(word.length() - 1) == word.charAt(0)) {
+
+        if (word.length() > 1) {
+            // Store the letters in the word as an array
+            char[] array = word.toCharArray();
+
+
+            // If the first letter matches the last letter, remove them from the array.
+            if (array[0] == array[word.length() - 1]) {
+                word = word.substring(1, word.length() - 1);
+                // Call on the method again with the new word
+                return pal(word);
+            } else {
+                // If the first letter does not match the last letter, return false
+                return false;
+            }
+
+        } else {
+            return true;
         }
-        return true;
     }
 
     public static void main(String[] args) {
         // Test the method
         A2Q7 test = new A2Q7();
-        test.pal("Racecar");
+        boolean lol = test.pal("racecar");
+        System.out.println(lol);
     }
 }

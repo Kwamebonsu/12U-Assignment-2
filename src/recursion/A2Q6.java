@@ -24,34 +24,9 @@ public class A2Q6 {
         } else {
             // Find the remainder of the number and output it. 
             remainder = n % b;
-
-            // If the number is greater than 10, output a letter instead
-
-////            if(remainder < 10){
-////            System.out.print(remainder);
-////            }
-////            else if(remainder == 10){
-////                System.out.println("A");
-////            }
-////            else if(remainder == 11){
-////                System.out.println("B");
-////            }
-////            else if(remainder == 12){
-////                System.out.println("C");
-////            }
-////            else if(remainder == 13){
-////                System.out.println("D");
-////            }
-////            else if(remainder == 14){
-////                System.out.println("E");
-////            }
-////            else if(remainder == 15){
-////                System.out.println("F");
-////            }
-
             // Divide the number by b
             n = n / b;
-
+            System.out.print(remainder);
             // Call on the method again
             convert(n, b);
             return remainder;
