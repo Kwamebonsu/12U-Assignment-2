@@ -18,12 +18,17 @@ public class A2Q6 {
         if (n == 0) {
             return "" + 0;
         }
+        // calculate the remainder
         int remainder = n % b;
+        // Check if the remainder is >= 10
         String rem = toLetter(remainder);
+        // Calculate the number
         int number = n / b;
+        // Call on the method again and add the binary number to the end
         return convert(number, b) + rem;
 
     }
+    // If the remainder is >= 10, change in to a corresponding letter
 
     public String toLetter(int num) {
         String letter = "";
@@ -46,6 +51,7 @@ public class A2Q6 {
             case 15:
                 letter = "F";
                 break;
+            // If the remainder is <10, do nothing
             default:
                 letter = "" + num;
                 break;

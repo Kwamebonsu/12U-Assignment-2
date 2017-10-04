@@ -24,7 +24,7 @@ public class A2Q5 {
             // Find the remainder of the number and output it. Then divide the number by 10
            binaryConvert(n/2);
             System.out.print(1);
-            
+            // Print out a 0
         } else{
             binaryConvert(n/2);
             System.out.print(0);
