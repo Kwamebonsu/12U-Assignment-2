@@ -30,7 +30,7 @@ public class A2Q7 {
                 // If the first letter does not match the last letter, return false
                 return false;
             }
-
+            // Once there is only 1 letter left return true
         } else {
             return true;
         }

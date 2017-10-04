@@ -13,21 +13,22 @@ public class A2Q5 {
     /**
      * @param args the command line arguments
      */
-    public int binaryConvert(int n) {
+    public void binaryConvert(int n) {
         // Create a variable for the binary number
         int binary = 0;
         // If the number = 1 end the loop
         if (n == 1) {
             binary = n;
             System.out.print(binary);
-            return binary;
-        } else {
+        } else if(n%2 == 1){
             // Find the remainder of the number and output it. Then divide the number by 10
-            binary = n % 2;
-            n = n / 2;
-            System.out.print(binary);
-            binaryConvert(n);
-            return binary;
+           binaryConvert(n/2);
+            System.out.print(1);
+            
+        } else{
+            binaryConvert(n/2);
+            System.out.print(0);
+            
         }
     }
 
