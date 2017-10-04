@@ -13,44 +13,49 @@ public class A2Q6 {
     /**
      * @param args the command line arguments
      */
-    public int convert(int n, int b) {
-        // Create a variable for the binary number
-        int remainder = 0;
-        // If the number = 1 end the loop
-        if (n == 1) {
-            remainder = n;
-            System.out.print(remainder);
-            return remainder;
-        } else {
-            // Find the remainder of the number and output it. 
-            remainder = n % b;
-            // Divide the number by b
-            n = n / b;
-            if (remainder < 10) {
-                System.out.print(remainder);
-            } else if (remainder == 10) {
-                System.out.println("A");
-            } else if (remainder == 11) {
-                System.out.println("B");
-            } else if (remainder == 12) {
-                System.out.println("C");
-            } else if (remainder == 13) {
-                System.out.println("D");
-            } else if (remainder == 14) {
-                System.out.println("E");
-            } else if (remainder == 15) {
-                System.out.println("F");
-            }
-            // Call on the method again
-            convert(n, b);
-            return remainder;
+    public String convert(int n, int b) {
+        // If the number = 0 end the loop
+        if (n == 0) {
+            return "" + 0;
         }
+        int remainder = n % b;
+        String rem = toLetter(remainder);
+        int number = n / b;
+        return convert(number, b) + rem;
+
+    }
+
+    public String toLetter(int num) {
+        String letter = "";
+        switch (num) {
+            case 10:
+                letter = "A";
+                break;
+            case 11:
+                letter = "B";
+                break;
+            case 12:
+                letter = "C";
+                break;
+            case 13:
+                letter = "D";
+                break;
+            case 14:
+                letter = "E";
+                break;
+            case 15:
+                letter = "F";
+                break;
+            default:
+                letter = "" + num;
+                break;
+        }
+        return letter;
     }
 
     public static void main(String[] args) {
         // Test the method
         A2Q6 test = new A2Q6();
-        test.convert(1000, 16);
-        System.out.println("");
+        System.out.println(test.convert(1000, 16));
     }
 }
